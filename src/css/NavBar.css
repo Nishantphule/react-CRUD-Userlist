@@ -1,0 +1,16 @@
+.nav-option{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav-row{
+width: 50%;
+}
+
+.column{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
