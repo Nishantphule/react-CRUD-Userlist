@@ -3,11 +3,19 @@ import UserCard from './Card'
 import '../css/users.css'
 import { IconButton} from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState ,useEffect} from 'react';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import EditIcon from '@mui/icons-material/Edit';
 
  function Users(){
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [list1, setList] = useState([]);
   const getUsers = () => {
     fetch("https://6288bebc7af826e39e64a149.mockapi.io/users", {
@@ -27,14 +35,30 @@ useEffect(() => getUsers(),[]);
   .then(() => getUsers())
 }
   return (
-    <div className='Users'>
-
-      {list1.map((data) => (<UserCard 
+    <TableContainer className='Users' component={Paper}>
+      <h1 className='List'>Users list</h1>
+      <Table className='user-info' >
+        <TableHead>
+          <TableRow>
+            <TableCell >Id</TableCell>
+            <TableCell >First Name</TableCell>
+            <TableCell >Last Name</TableCell>
+            <TableCell >Gender</TableCell>
+            <TableCell >DOB</TableCell>
+            <TableCell >Email</TableCell>
+            <TableCell >Actions</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody >
+          {list1.map((data) => (<UserCard 
       key={data.id} 
       user={data} 
       id={data.id}
-      deletebtn={<IconButton title="Delete User"  onClick={() => deleteUser(data.id)}><DeleteIcon color="error"/></IconButton>}/>))}
-    </div>
+      editbtn={<IconButton title="Edit Movie" onClick={() => navigate("/useredit/"+ data.id)}><EditIcon color="primary"/></IconButton>}
+      deletebtn={<IconButton title="Delete User" onClick={() => deleteUser(data.id)}><DeleteIcon color="error"/></IconButton>}/>))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   )
 }
 export default Users;

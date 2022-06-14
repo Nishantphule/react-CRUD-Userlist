@@ -1,20 +1,18 @@
 import React from 'react'
-import Card from '@mui/material/Card';
 import '../css/card.css'
-import { CardActions } from '@mui/material';
+import TableCell from '@mui/material/TableCell';
+import TableRow from '@mui/material/TableRow';
 
-
-export default function UserCard({key,user,deletebtn}){
+export default function UserCard({key,user,deletebtn,editbtn}){
     return (
-      <Card className='card' key={key}>
-        <img src={user.pic} alt={user.firstName}/>
-        <h1>{user.firstName} {user.lastName}</h1>
-        <p>{user.gender}</p>
-        <p>DOB : {user.dob}</p>
-        <a href="mailto:nishantphule12@gmail.com"> {user.email}</a>
-        <CardActions>
-          {deletebtn}
-        </CardActions>
-      </Card>
+        <TableRow>
+          <TableCell>{user.id}</TableCell>
+          <TableCell>{user.firstName}</TableCell>
+          <TableCell>{user.lastName}</TableCell>
+          <TableCell>{user.gender}</TableCell>
+          <TableCell>{user.dob}</TableCell>
+          <TableCell>{user.email}</TableCell>
+          <TableCell>{editbtn}{deletebtn}</TableCell>
+        </TableRow>
     )
 }

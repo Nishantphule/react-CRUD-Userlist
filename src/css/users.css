@@ -1,5 +1,10 @@
-.Users{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.List{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.head text{
+    text-align: center;
 }

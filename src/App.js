@@ -6,6 +6,7 @@ import {Route, Routes,Navigate } from 'react-router-dom';
 import Users from './COMPONENTS/Users';
 import AddUser from './COMPONENTS/AddUser';
 import  NotFound  from './COMPONENTS/NotFound';
+import EditUser from './COMPONENTS/EditUser';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/users' element={<Users />} />
           <Route path='/add-user' element={<AddUser />}/>
           <Route path='/404' element={<NotFound/>}/>
+          <Route path='/useredit/:id' element={<EditUser/>}/>
         </Routes>
       </div>
     </div>
