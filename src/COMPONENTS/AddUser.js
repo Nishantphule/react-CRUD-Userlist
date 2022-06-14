@@ -1,7 +1,7 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { useState ,useEffect} from 'react';
+import { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import '../css/addUser.css'
 

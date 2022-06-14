@@ -1,13 +1,13 @@
 import React from 'react'
 import UserCard from './Card'
 import '../css/users.css'
-import { IconButton, Toolbar } from "@mui/material";
+import { IconButton} from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { useState ,useEffect} from 'react';
 
  function Users(){
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [list1, setList] = useState([]);
   const getUsers = () => {
     fetch("https://6288bebc7af826e39e64a149.mockapi.io/users", {
