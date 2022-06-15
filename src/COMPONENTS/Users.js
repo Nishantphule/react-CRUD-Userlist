@@ -54,7 +54,7 @@ useEffect(() => getUsers(),[]);
       key={data.id} 
       user={data} 
       id={data.id}
-      editbtn={<IconButton title="Edit Movie" onClick={() => navigate("/useredit/"+ data.id)}><EditIcon color="primary"/></IconButton>}
+      editbtn={<IconButton title="Edit User" onClick={() => navigate("/useredit/"+ data.id)}><EditIcon color="primary"/></IconButton>}
       deletebtn={<IconButton title="Delete User" onClick={() => deleteUser(data.id)}><DeleteIcon color="error"/></IconButton>}/>))}
         </TableBody>
       </Table>

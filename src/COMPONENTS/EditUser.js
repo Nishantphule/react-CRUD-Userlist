@@ -37,11 +37,13 @@ export default function EditUser () {
   
     return (
       <div className='info'>
-        <TextField className='input' onChange={(e => setUser({ ...Add, firstName: e.target.value }))} id="outlined-basic" label="First Name" variant="outlined" placeholder={User.firstName}/>
-        <TextField className='input' onChange={(e => setUser({ ...Add, lastName: e.target.value }))} id="outlined-basic" label="Last Name" variant="outlined" placeholder={User.lastName}/>
-        <TextField className='input' onChange={(e => setUser({ ...Add, gender: e.target.value }))} id="outlined-basic" label="Gender" variant="outlined" placeholder={User.gender}/>
-        <TextField className='input' onChange={(e => setUser({ ...Add, dob: e.target.value }))} id="outlined-basic" label="DOB" variant="outlined" placeholder='YYYY-MM-DD' type="date" />
-        <TextField className='input' onChange={(e => setUser({ ...Add, email: e.target.value }))} id="outlined-basic" label="Email" variant="outlined" placeholder={User.email}/>
+        <img className='random' src="https://source.unsplash.com/random/?user/" alt={User.firstName} />
+        <h1>{User.firstName} {User.lastName}</h1>
+        <TextField className='input' onChange={(e => setUser({ ...Add, firstName: e.target.value }))} id="outlined-basic" label={User.firstName} variant="outlined" placeholder={User.firstName}/>
+        <TextField className='input' onChange={(e => setUser({ ...Add, lastName: e.target.value }))} id="outlined-basic" label={User.lastName} variant="outlined" placeholder={User.lastName}/>
+        <TextField className='input' onChange={(e => setUser({ ...Add, gender: e.target.value }))} id="outlined-basic" label={User.gender} variant="outlined" placeholder={User.gender}/>
+        <TextField className='input' onChange={(e => setUser({ ...Add, dob: e.target.value }))} id="outlined-basic" label={User.dob} variant="outlined" placeholder='YYYY-MM-DD' type="date" />
+        <TextField className='input' onChange={(e => setUser({ ...Add, email: e.target.value }))} id="outlined-basic" label={User.email} variant="outlined" placeholder={User.email}/>
         <Button style={{width:"20%"}} className="add" onClick={() => newUser(Add)} color="secondary" variant="contained">UPDATE User</Button>
         <Backbtn/>
       </div>

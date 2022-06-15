@@ -12,5 +12,14 @@ width: 50%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.active > button{
+    background-color: aliceblue;
+    color: black;
+    font-size: 20px;
+
 }

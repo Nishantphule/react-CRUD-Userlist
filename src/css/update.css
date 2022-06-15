@@ -15,3 +15,9 @@
 .input [type="file"],.input [type="date"]{
     margin-top: 20px;
 }
+
+.random{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}

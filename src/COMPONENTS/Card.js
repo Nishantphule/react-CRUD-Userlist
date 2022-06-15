@@ -5,7 +5,7 @@ import TableRow from '@mui/material/TableRow';
 
 export default function UserCard({key,user,deletebtn,editbtn}){
     return (
-        <TableRow>
+        <TableRow key={key}>
           <TableCell>{user.id}</TableCell>
           <TableCell>{user.firstName}</TableCell>
           <TableCell>{user.lastName}</TableCell>
