@@ -27,12 +27,16 @@ import EditIcon from '@mui/icons-material/Edit';
 
 useEffect(() => getUsers(),[]);
 
-  const deleteUser = (id) => {
-    fetch("https://6288bebc7af826e39e64a149.mockapi.io/users/"+id, {
-      method: "DELETE"
-    })
-  .then((data) => data.json())
-  .then(() => getUsers())
+  const deleteUser = (id,f,l) => {
+    if(window.confirm(`You want to delete ${f} ${l} data?` )){
+      fetch("https://6288bebc7af826e39e64a149.mockapi.io/users/"+id, {
+        method: "DELETE"
+      })
+      .then((data) => data.json())
+      .then(() => getUsers())
+    }
+    
+  
 }
   return (
     <TableContainer className='Users' component={Paper}>
@@ -55,7 +59,7 @@ useEffect(() => getUsers(),[]);
       user={data} 
       id={data.id}
       editbtn={<IconButton title="Edit User" onClick={() => navigate("/useredit/"+ data.id)}><EditIcon color="primary"/></IconButton>}
-      deletebtn={<IconButton title="Delete User" onClick={() => deleteUser(data.id)}><DeleteIcon color="error"/></IconButton>}/>))}
+      deletebtn={<IconButton title="Delete User" onClick={() => deleteUser(data.id,data.firstName,data.lastName)}><DeleteIcon color="error"/></IconButton>}/>))}
         </TableBody>
       </Table>
     </TableContainer>
