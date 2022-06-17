@@ -1,7 +1,7 @@
 .info .input{
     width: 100%;
     margin-bottom: 0px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .info{
@@ -15,17 +15,6 @@
 
 .input1 [type="text"],.input1 [type="date"]{
     margin-top: 20px;
-}
-
-.input1{
-    width: 45%;
-}
-
-.inputs{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 40px 65px;
 }
 
 .info .add{
