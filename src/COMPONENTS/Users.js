@@ -28,7 +28,7 @@ import EditIcon from '@mui/icons-material/Edit';
 useEffect(() => getUsers(),[]);
 
   const deleteUser = (id,f,l) => {
-    if(window.confirm(`You want to delete ${f} ${l} data?` )){
+    if(window.confirm(`Confirm to delete ${f} ${l} data?` )){
       fetch("https://6288bebc7af826e39e64a149.mockapi.io/users/"+id, {
         method: "DELETE"
       })

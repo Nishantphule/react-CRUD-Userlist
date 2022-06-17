@@ -14,7 +14,15 @@ export default function AddUser(){
   const [Add, setUser] = useState({firstName:"",lastName:'',gender:"",dob:"",email:""});
 
     const newUser = (add) => {
-      fetch("https://6288bebc7af826e39e64a149.mockapi.io/users", {
+      if(window.confirm(`
+      Name: ${add.firstName} ${add.lastName}
+      Gender: ${add.gender}
+      DoB: ${add.dob}
+      Email: ${add.email}
+
+
+      Confirm to add Data!`)){
+        fetch("https://6288bebc7af826e39e64a149.mockapi.io/users", {
       method: "POST",
       body: JSON.stringify(add),
       headers: {
@@ -22,6 +30,8 @@ export default function AddUser(){
     },
     }).then((data) => data.json())
     .then(() => navigate('/users'))
+    .then(() => alert(`Data added succesfully with Name : ${add.firstName} ${add.lastName}`))
+      }
     }
 
     return (
