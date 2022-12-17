@@ -13,6 +13,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import EditIcon from '@mui/icons-material/Edit';
+import InfoIcon from '@mui/icons-material/Info';
 
  function Users(){
   const navigate = useNavigate();
@@ -35,9 +36,8 @@ useEffect(() => getUsers(),[]);
       .then((data) => data.json())
       .then(() => getUsers())
     }
-    
-  
 }
+
   return (
     <TableContainer className='Users' component={Paper}>
       <h1 className='List'>Users list</h1>
@@ -45,11 +45,7 @@ useEffect(() => getUsers(),[]);
         <TableHead>
           <TableRow>
             <TableCell >Id</TableCell>
-            <TableCell >First Name</TableCell>
-            <TableCell >Last Name</TableCell>
-            <TableCell >Gender</TableCell>
-            <TableCell >DOB</TableCell>
-            <TableCell >Email</TableCell>
+            <TableCell >Name</TableCell>
             <TableCell >Actions</TableCell>
           </TableRow>
         </TableHead>
@@ -58,11 +54,17 @@ useEffect(() => getUsers(),[]);
       key={data.id} 
       user={data} 
       id={data.id}
+      userInfo={<IconButton title="View Profile" onClick={() => navigate("/userinfo/"+ data.id)}><InfoIcon color="primary"/></IconButton>}
+      
       editbtn={<IconButton title="Edit User" onClick={() => navigate("/useredit/"+ data.id)}><EditIcon color="primary"/></IconButton>}
-      deletebtn={<IconButton title="Delete User" onClick={() => deleteUser(data.id,data.firstName,data.lastName)}><DeleteIcon color="error"/></IconButton>}/>))}
+      
+      deletebtn={<IconButton title="Delete User" onClick={() => deleteUser(data.id,data.firstName,data.lastName)}><DeleteIcon color="error"/></IconButton>}
+      />))}
         </TableBody>
       </Table>
     </TableContainer>
   )
 }
+
+
 export default Users;

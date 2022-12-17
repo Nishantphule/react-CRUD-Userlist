@@ -22,7 +22,7 @@ export default function EditUser () {
     
     }, [id])
   
-    const [Add, setUser] = useState({firstName:User.firstName,lastName:User.lastName,gender:User.gender,dob:User.dob,email:User.email});
+    const [Add, setUser] = useState({firstName:User.firstName,lastName:User.lastName,gender:User.gender,dob:User.dob,email:User.email,pic:User.pic});
   
     
       const newUser = (add) => {
@@ -42,13 +42,14 @@ export default function EditUser () {
   
     return (
       <div className='info'>
-        <img className='random' src="https://source.unsplash.com/random/?user/" alt={User.firstName} />
+        <img className='random' src={User.pic} alt={User.firstName} />
         <h1>{User.firstName} {User.lastName}</h1>
         <TextField className='input' onChange={(e => setUser({ ...Add, firstName: e.target.value }))} id="outlined-basic" label="First Name" variant="outlined" placeholder={User.firstName}/>
         <TextField className='input' onChange={(e => setUser({ ...Add, lastName: e.target.value }))} id="outlined-basic" label="Last Name" variant="outlined" placeholder={User.lastName}/>
         <TextField className='input' onChange={(e => setUser({ ...Add, gender: e.target.value }))} id="outlined-basic" label="Gender" variant="outlined" placeholder={User.gender}/>
         <TextField className='input' onChange={(e => setUser({ ...Add, dob: e.target.value }))} id="outlined-basic" label="Date of Birth" variant="outlined" placeholder='YYYY-MM-DD' type="date" />
         <TextField className='input' onChange={(e => setUser({ ...Add, email: e.target.value }))} id="outlined-basic" label="Email" variant="outlined" placeholder={User.email}/>
+        <TextField className='input' onChange={(e => setUser({ ...Add, pic: e.target.value }))} id="outlined-basic" label="Profile Pic Url" variant="outlined" placeholder={User.pic}/>
         <Button style={{width:"20%"}} className="add" onClick={() => newUser(Add)} color="secondary" variant="contained">UPDATE User</Button><Backbtn/>
       </div>
     );
